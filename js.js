@@ -30,6 +30,7 @@ fetch(urlAPI)
     })
 
 function displayEmployees (employeeData) {
+    console.log(employeeData);
     employees = employeeData;
     // store the employee HTML as we create it
     let employeeHTML = '';
@@ -78,7 +79,7 @@ function displayModal(index) {
                             <p class="address">${city}</p>
                             <hr>
                             <p>${phone}</p>
-                            <p class="address"> ${street}, ${state} ${postcode}</p>
+                            <p class="address"> ${street.number}, ${state} ${postcode} </p>
                             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
                         </div>
                     `;
@@ -100,37 +101,28 @@ gridContainer.addEventListener('click', e => {
 
         
         let incommingIndex = index;
+
         prevCard.addEventListener('click', ()=> {
             if (incommingIndex >= 1 && incommingIndex <= 11) 
             {
                 incommingIndex --;
-                
                 displayModal(incommingIndex);
-                console.log(incommingIndex);
             } else {
                 incommingIndex = 0;
             }
         });
-
         nextCard.addEventListener( "click", () => {
-            console.log(incommingIndex);
             if (incommingIndex >= 0 && incommingIndex <= 10){
                  incommingIndex++;
                  displayModal(incommingIndex);
-                 console.log(incommingIndex);
             } else {
                 incommingIndex = 11;
             }
         });
+
+
     }
 });
-
-
-     
-
-
-
-
 
 
 // closes the modal window.
@@ -169,19 +161,5 @@ const filterCards = ()=> {
                   }    
           });
 };
-
-/*
-    modal window
-*/
-
-// const modalDisplay = ()=> {
-//     console.log(modal);
-// }
-
-// const slideShow = prevCard.addEventListener( (event) => {
-   
-
-// })
-
 
     
