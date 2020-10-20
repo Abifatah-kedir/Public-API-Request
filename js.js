@@ -10,10 +10,11 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 
 
-const mWindow = document.querySelector(".Modal");
+// const mWindow = document.querySelector(".Modal");
 const prevCard =document.querySelector(".prev");
 const nextCard = document.querySelector(".next");
-let modal = "";
+
+
 
 // fetch data from API
 fetch(urlAPI)
@@ -25,9 +26,7 @@ fetch(urlAPI)
         console.log(err);
     })
     .finally(() => {
-        // modalDisplay();
         filterCards();
-       
     })
 
 function displayEmployees (employeeData) {
@@ -72,45 +71,71 @@ function displayModal(index) {
 
     const modalHTML = `
                         <img class = "avatar" src = "${picture.large}"/>
-
+                        
                         <div class="text-container">
                             <h2 class="name">${name.first} ${name.last}</h2>
                             <p class="email">${email}</p>
                             <p class="address">${city}</p>
-
-                            <hr />
-
+                            <hr>
                             <p>${phone}</p>
-                            <p class="address">${street}, ${state} ${postcode}</p>
+                            <p class="address"> ${street}, ${state} ${postcode}</p>
                             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
                         </div>
                     `;
 
-  
-
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
-    
-    
 }
 
 
 gridContainer.addEventListener('click', e => {
     // make sure the click is not on the gridContainer itself
-    if (e.target !== gridContainer) {
+    if (e.target !== gridContainer) 
+    {
         // select the card element based on its proximity to actual element
         const card = e.target.closest(".card");
         const index = card.getAttribute('data-index');
         displayModal(index);
-    }
+        
 
+        
+        let incommingIndex = index;
+        prevCard.addEventListener('click', ()=> {
+            if (incommingIndex >= 1 && incommingIndex <= 11) 
+            {
+                incommingIndex --;
+                
+                displayModal(incommingIndex);
+                console.log(incommingIndex);
+            } else {
+                incommingIndex = 0;
+            }
+        });
+
+        nextCard.addEventListener( "click", () => {
+            console.log(incommingIndex);
+            if (incommingIndex >= 0 && incommingIndex <= 10){
+                 incommingIndex++;
+                 displayModal(incommingIndex);
+                 console.log(incommingIndex);
+            } else {
+                incommingIndex = 11;
+            }
+        });
+    }
 });
+
+
+     
+
+
+
+
 
 
 // closes the modal window.
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
-    document.getElementById("Modal_Window").style.display = "none";
 });
 
 
@@ -159,3 +184,4 @@ const filterCards = ()=> {
 // })
 
 
+    
