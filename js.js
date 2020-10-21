@@ -98,28 +98,32 @@ gridContainer.addEventListener('click', e => {
         const index = card.getAttribute('data-index');
         displayModal(index);
         
-
-        
+        //stores the incomming index
         let incommingIndex = index;
 
-        prevCard.addEventListener('click', ()=> {
-            if (incommingIndex >= 1 && incommingIndex <= 11) 
+        /*
+            Increments and Decrements the the incomming index when clicked nextCard 
+            and prevCard respectivey before it triges displayModal function.
+        */
+        prevCard.addEventListener('click', ()=>
+        {
+            if (incommingIndex >= 1 ) 
             {
                 incommingIndex --;
                 displayModal(incommingIndex);
             } else {
                 incommingIndex = 0;
             }
-        });
-        nextCard.addEventListener( "click", () => {
-            if (incommingIndex >= 0 && incommingIndex <= 10){
+        });+
+        nextCard.addEventListener( "click", () => 
+        {
+            if ( incommingIndex <= 10){
                  incommingIndex++;
                  displayModal(incommingIndex);
             } else {
                 incommingIndex = 11;
             }
         });
-
 
     }
 });
@@ -144,7 +148,8 @@ const filterCards = ()=> {
           const valueInput = document.querySelector(".myInput");
           const name = document.querySelectorAll(".text-container h2");
   
-          SearchInput.addEventListener( "input", () => {
+          SearchInput.addEventListener( "input", () => 
+          {
               for(let i = 0; i < name.length; i++)
                   {  
                       let targetValue = valueInput.value;
