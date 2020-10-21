@@ -30,7 +30,7 @@ fetch(urlAPI)
     })
 
 function displayEmployees (employeeData) {
-    console.log(employeeData);
+   
     employees = employeeData;
     // store the employee HTML as we create it
     let employeeHTML = '';
