@@ -9,9 +9,8 @@ modalContainer.className = "modal-container";
 modalContainer.style.display = "none";
 createGallery.insertAdjacentElement("afterend", modalContainer);
 
-
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name,picture,
-                email,location,phone,dob,&noinfo&nat=US`;
+// const urlAPI = `https://randomuser.me/api/?results=12&inc=name,picture,
+//                 email,location,phone,dob,&noinfo&nat=US`;
 
 // Search field.
 const searchContainer = `<form action="#" method="get">
@@ -103,7 +102,7 @@ const modalbuttons = (event)=> {
 
     if(event.target === closeButton) {
         modalContainer.style.display = "none";
-    } else if((event.target === prevButton) && (incommingIndex >0) ) {
+    } else if((event.target === prevButton) && (incommingIndex > 0) ) {
         incommingIndex--;
         modalContainer.innerHTML = displayModal(incommingIndex);
     }else if((event.target === nextButton) && (incommingIndex < 11)) {
