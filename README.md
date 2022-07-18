@@ -1,5 +1,5 @@
 # Public-API-Request
-
+Note: added card, pop up background, fonts style colors.
 #Project Description
 
 An app for employees to share contact information with each other.
