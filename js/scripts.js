@@ -58,6 +58,7 @@ const displayModal = (index)=> {
         `
             <div class="modal">
                 <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+
                 <div class="modal-info-container">
 
                     <img class = "avatar" src = "${picture.large}"  alt="profile picture"/>
@@ -66,17 +67,22 @@ const displayModal = (index)=> {
                     <p class="address">${city}</p>
                     <hr>
                     <p>${phone}</p>
-                    <p class="address"> ${street.number}, ${state} ${postcode} </p>
-                    <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+                    <p class="address"> ${street.number} ${street.name}, ${state} ${postcode} </p>
+                    <p>Birthday: ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}</p>
+
                 </div>
+
             </div>
 
             // IMPORTANT: Below is only for exceeds tasks 
             <div class="modal-btn-container">
+
                 <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
                 <button type="button" id="modal-next" class="modal-next btn">Next</button>
+
             </div>
         `;
+
         incommingIndex = index;
 
         return modalHTML;
