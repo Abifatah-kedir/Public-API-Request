@@ -5,8 +5,10 @@
 An app for employees to share contact information with each other.
 
 #Tools Used:
-
-HTML CSS JavaScript Fetch API
+HTML
+CSS
+JavaScript 
+Fetch API
 
 #Project Features:
 
