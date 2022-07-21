@@ -1,16 +1,16 @@
 # Public-API-Request
 
-##Project Description
+## Project Description
 
 An app for employees to share contact information with each other.
 
-##Tools Used
+## Tools Used
 * HTML
 * CSS
 * JavaScript 
 * Fetch API
 
-##Project Features:
+## Project Features:
 
 >Gets 12 random people with their contact information from the Rand User API and displays them in cards on the page.
 to view one of the employee infomation, you can click on any card that shows you pop up with more detailed information.
